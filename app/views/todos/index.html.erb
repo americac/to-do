@@ -1,12 +1,7 @@
-<%= form_tag("/todos", method: "post") do %>
-  <%= label_tag("todo[:description]", "Description") %>
-  <%= text_field_tag "todo[:description]" %>
-  <%= submit_tag("Save") %>
-<% end %>
-<br>
-<h1>All todos</h1>
-<ul>
+<%= link_to "Add a new todo", new_todo_path %>
+
+<ul class="todos">
   <% @todos.each do |todo| %>
-    <li><%= todo.description %>
+    <li><%= todo.title %></li>
   <% end %>
 </ul>
