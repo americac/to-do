@@ -1,4 +1,7 @@
 class TodosController < ApplicationController
+    # Simple authentication, handled in appliation_controller.rb
+  before_filter :authenticate
+
   def index
     @todos = Todo.all
   end

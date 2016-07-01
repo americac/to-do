@@ -2,7 +2,7 @@ require "rails_helper"
 
 feature "User creates todo" do
   scenario "Successfully" do
-    visit root_path
+    sign_in  # Took out visit root_path, sign_in is called first from within the Features module
     click_on "Add a new todo"
     fill_in "Title", with: "Buy milk"
     click_on "Submit"
