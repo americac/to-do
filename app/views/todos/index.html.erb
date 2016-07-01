@@ -1,0 +1,5 @@
+<%= form_tag("/todos", method: "post") do %>
+  <%= label_tag(:todo, "Todo") %>
+  <%= text_field_tag(:todo) %>
+  <%= submit_tag("Save") %>
+<% end %>
