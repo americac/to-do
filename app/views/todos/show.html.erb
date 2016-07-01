@@ -1,1 +1,6 @@
 <h1>All todos</h1>
+<ul>
+  <% @todos.each do |todo| %>
+    <li><%= todo.description %>
+  <% end %>
+</ul>

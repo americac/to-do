@@ -1,5 +1,12 @@
 <%= form_tag("/todos", method: "post") do %>
-  <%= label_tag(:todo, "Todo") %>
-  <%= text_field_tag(:todo) %>
+  <%= label_tag("todo[:description]", "Description") %>
+  <%= text_field_tag "todo[:description]" %>
   <%= submit_tag("Save") %>
 <% end %>
+<br>
+<h1>All todos</h1>
+<ul>
+  <% @todos.each do |todo| %>
+    <li><%= todo.description %>
+  <% end %>
+</ul>
