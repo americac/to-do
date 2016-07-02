@@ -11,7 +11,7 @@ class TodosController < ApplicationController
   end
 
   def create
-    Todo.create(todo_params.merge(email: session[:current_email]))
+    Todo.create(todo_params.merge(email: current_email))
     redirect_to todos_path
   end
 
