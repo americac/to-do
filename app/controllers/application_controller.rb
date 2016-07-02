@@ -10,15 +10,7 @@ class ApplicationController < ActionController::Base
   end
 
   def signed_in?
-    current_email.present?
-  end
-
-    # This method will return current_email to caller, all references to
-    # session[:current_email] would be changed to current_email so if the
-    # location of where this is stored changes it would only change here
-    # and not all over the application where it is being called
-  def current_email
-    session[:current_email]
+    current_user.signed_in?
   end
 
   def sign_in_as(email)
@@ -26,6 +18,6 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user
-    User.new(current_email)
+    User.new(session[:current_email])
   end
 end
